@@ -30,7 +30,7 @@ func (c *testContext) Errorf(format string, args ...interface{}) {
 func (c *testContext) theAppRunsWithParameters(args string) error {
 	c.cmdInput.parameters = args
 	cmdArgs := strings.Split(args, " ")
-	cmd := exec.Command("../goclitem", cmdArgs...)
+	cmd := exec.Command("../stars-turn", cmdArgs...)
 	output, err := cmd.CombinedOutput()
 	c.cmdResult.Output = string(output)
 	c.cmdResult.Err = err

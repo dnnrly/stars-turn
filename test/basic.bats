@@ -1,4 +1,4 @@
-BIN=./goclitem
+BIN=./stars-turn
 
 @test "Can run the application" {
     run ${BIN}

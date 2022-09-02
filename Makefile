@@ -10,7 +10,7 @@ TMP_DIR?=./tmp
 
 BASE_DIR=$(shell pwd)
 
-NAME=goclitem
+NAME=stars-turn
 
 export GO111MODULE=on
 export GOPROXY=https://proxy.golang.org
@@ -20,11 +20,11 @@ help:   ## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sort | sed -e 's/\\$$//' | sed -e 's/:.\+##/ --/'
 
 .PHONY: install
-install: ## install goclitem
+install: ## install stars-turn
 	$(GO_BIN) install -v ./cmd/$(NAME)
 
 .PHONY: build
-build: ## build goclitem
+build: ## build stars-turn
 	$(GO_BIN) build -v ./cmd/$(NAME)
 
 .PHONY: clean
@@ -75,7 +75,7 @@ test: ## run unit tests and format for human consumption
 	$(GO_BIN) test -json ./... | tparse -all
 
 .PHONY: acceptance-test
-acceptance-test: ## run acceptance tests against the build goclitem
+acceptance-test: ## run acceptance tests against the build stars-turn
 	cd test && godog -t @Acceptance
 
 .PHONY: ci-test

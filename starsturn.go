@@ -1,3 +1,3 @@
-package goclitem
+package starsturn
 
 var Exported = true
