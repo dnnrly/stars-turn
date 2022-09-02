@@ -1,28 +1,8 @@
-# Go CLI Template
+# Stars Turn
 
-This is a template for Go CLI tools. Major features are:
+An API for getting the next several turns for a Stars! game.
 
-1. Setup script
-2. Release build action
-3. PR validation action
-4. Code of Conduct
-5. Basic security policy
-6. Modules enabled
-7. Rudimentary accepance tests
-
-## Setup
-
-1. Create a new repo from this template
-2. `$ ./setup.sh`
-3. Follow the prompts
-
-Use the `-d` option to see what will be modified without changing any files.
-
-**You can delete everything above this line afterwards.**
-
-# Project Title
-
-One Paragraph of project description goes here
+This effort is very much inspired by the efforts of Rick of [TotalHost](https://github.com/ricks03/TotalHost) fame.
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/dnnrly/stars-turn)](https://github.com/dnnrly/stars-turn/releases/latest)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dnnrly/stars-turn/Release%20workflow)](https://github.com/dnnrly/stars-turn/actions?query=workflow%3A%22Release+workflow%22)
@@ -40,11 +20,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+To get this API working, there are a few important dependencies that you will need to install. Pay attention, there are a couple of surprising steps. And please note, these instructions are likely to be incorrect in the very short term. If you spot an error or have any difficulty in general then feel free to raise an issue with all of the gory details.
 
-```
-Give examples
-```
+The first important note is that this assumes that you are running on Linux. I'm hoping to get this working on Windows eventually but 1 thing at a time...
+
+The dependencies:
+
+1. Wine (the Windows compatability layer)
+2. Stars! - for this you will need a fully licensed copy. I won't tell you how to acquire a license, you'll have to use your google-fu to do that
+
 
 ### Installing
 
@@ -91,7 +75,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Your name here** - *Initial work* - [dnnrly](https://github.com/dnnrly)
+* **Pascal Dennerly** - *Initial work* - [dnnrly](https://github.com/dnnrly)
 
 See also the list of [contributors](https://github.com/dnnrly/stars-turn/contributors) who participated in this project.
 
