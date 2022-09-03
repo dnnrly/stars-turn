@@ -39,7 +39,7 @@ clean-deps: ## remove dependency artifacts in the working director
 	rm -rf ./tmp
 
 ./bin/golangci-lint:
-	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.40.1
+	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.49.1
 
 ./bin/tparse: ./bin ./tmp
 	curl -sfL -o ./tmp/tparse.tar.gz https://github.com/mfridman/tparse/releases/download/v0.8.3/tparse_0.8.3_Linux_x86_64.tar.gz
@@ -60,7 +60,7 @@ test-deps: ./bin/tparse ./bin/golangci-lint ./bin/godog
 	mkdir ./tmp
 
 ./bin/goreleaser: ./bin ./tmp
-	$(CURL_BIN) --fail -L -o ./tmp/goreleaser.tar.gz https://github.com/goreleaser/goreleaser/releases/download/v0.165.0/goreleaser_Linux_x86_64.tar.gz
+	$(CURL_BIN) --fail -L -o ./tmp/goreleaser.tar.gz https://github.com/goreleaser/goreleaser/releases/download/v1.11.2/goreleaser_Linux_x86_64.tar.gz
 	gunzip -f ./tmp/goreleaser.tar.gz
 	tar -C ./bin -xvf ./tmp/goreleaser.tar
 
