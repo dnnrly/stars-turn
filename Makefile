@@ -74,9 +74,9 @@ deps: build-deps test-deps ## ci target - install all runtime dependencies
 test: ## run unit tests and format for human consumption
 	$(GO_BIN) test -json ./... | tparse -all
 
-.PHONY: acceptance-test
-acceptance-test: ## run acceptance tests against the build stars-turn
-	cd test && godog -t @Acceptance
+# .PHONY: acceptance-test
+# acceptance-test: ## run acceptance tests against the build stars-turn
+# 	cd test && godog -t @Acceptance
 
 .PHONY: ci-test
 ci-test: ## ci target - run tests to generate coverage data
