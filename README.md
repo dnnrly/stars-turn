@@ -85,4 +85,4 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
 
 ## Acknowledgments
 
-* Important people here
+* [Rick](https://github.com/ricks03) has coded up a fairly comprehensive Stars! hosting service
