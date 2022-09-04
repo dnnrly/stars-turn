@@ -76,7 +76,7 @@ test: ## run unit tests and format for human consumption
 
 .PHONY: acceptance-test
 acceptance-test: ## run acceptance tests against the build stars-turn
-	go test -tags acceptance ./cmd/stars-turn
+	go test -tags acceptance .
 
 .PHONY: ci-test
 ci-test: ## ci target - run tests to generate coverage data
