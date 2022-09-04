@@ -1,6 +1,6 @@
 //go:build acceptance
 
-package main
+package starsturn_test
 
 import (
 	"fmt"
@@ -32,7 +32,7 @@ func (s *AcceptanceSuite) SetupTest() {
 		log.Fatalf("could not find port %v", err)
 	}
 
-	s.cmd = *exec.Command("../../stars-turn", "-port", fmt.Sprintf("%d", s.port))
+	s.cmd = *exec.Command("./stars-turn", "-port", fmt.Sprintf("%d", s.port))
 	err = s.cmd.Start()
 	if err != nil {
 		log.Fatalf("could not start process %v", err)
