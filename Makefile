@@ -10,7 +10,7 @@ TMP_DIR?=./tmp
 
 BASE_DIR=$(shell pwd)
 
-NAME=goclitem
+NAME=stars-turn
 
 export GO111MODULE=on
 export GOPROXY=https://proxy.golang.org
@@ -20,11 +20,11 @@ help:   ## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sort | sed -e 's/\\$$//' | sed -e 's/:.\+##/ --/'
 
 .PHONY: install
-install: ## install goclitem
+install: ## install stars-turn
 	$(GO_BIN) install -v ./cmd/$(NAME)
 
 .PHONY: build
-build: ## build goclitem
+build: ## build stars-turn
 	$(GO_BIN) build -v ./cmd/$(NAME)
 
 .PHONY: clean
@@ -39,7 +39,7 @@ clean-deps: ## remove dependency artifacts in the working director
 	rm -rf ./tmp
 
 ./bin/golangci-lint:
-	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.40.1
+	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.49.1
 
 ./bin/tparse: ./bin ./tmp
 	curl -sfL -o ./tmp/tparse.tar.gz https://github.com/mfridman/tparse/releases/download/v0.8.3/tparse_0.8.3_Linux_x86_64.tar.gz
@@ -60,7 +60,7 @@ test-deps: ./bin/tparse ./bin/golangci-lint ./bin/godog
 	mkdir ./tmp
 
 ./bin/goreleaser: ./bin ./tmp
-	$(CURL_BIN) --fail -L -o ./tmp/goreleaser.tar.gz https://github.com/goreleaser/goreleaser/releases/download/v0.165.0/goreleaser_Linux_x86_64.tar.gz
+	$(CURL_BIN) --fail -L -o ./tmp/goreleaser.tar.gz https://github.com/goreleaser/goreleaser/releases/download/v1.11.2/goreleaser_Linux_x86_64.tar.gz
 	gunzip -f ./tmp/goreleaser.tar.gz
 	tar -C ./bin -xvf ./tmp/goreleaser.tar
 
@@ -75,8 +75,8 @@ test: ## run unit tests and format for human consumption
 	$(GO_BIN) test -json ./... | tparse -all
 
 .PHONY: acceptance-test
-acceptance-test: ## run acceptance tests against the build goclitem
-	cd test && godog -t @Acceptance
+acceptance-test: ## run acceptance tests against the build stars-turn
+	go test -tags acceptance ./cmd/stars-turn
 
 .PHONY: ci-test
 ci-test: ## ci target - run tests to generate coverage data

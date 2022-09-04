@@ -1,4 +1,4 @@
-package goclitem
+package starsturn
 
 import "testing"
 
