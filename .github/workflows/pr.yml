@@ -18,8 +18,8 @@ jobs:
         run: make deps
       - name: Unit test
         run: make ci-test
-      # - name: Acceptance test
-      #   run: make build acceptance-test-docker
+      - name: Acceptance test
+        run: make build acceptance-test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         env:
